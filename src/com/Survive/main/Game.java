@@ -158,7 +158,7 @@ public class Game extends Canvas implements Runnable {
             }
 
             }
-        }else if(GameState == STATE.Menu|| GameState == STATE.End||GameState == STATE.Select){
+        }else if(GameState == STATE.Menu|| GameState == STATE.End||GameState == STATE.Select ||GameState == STATE.Help){
             menu.tick();
             handler.tick();
         }

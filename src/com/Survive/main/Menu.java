@@ -40,7 +40,6 @@ public class Menu extends MouseAdapter{
 
                 game.diff = 0;
 
-                game.GameState = Game.STATE.Select;
             }
         }
 
