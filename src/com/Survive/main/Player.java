@@ -1,6 +1,7 @@
 package com.Survive.main;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.Random;
 
 public class Player extends GameObject{
@@ -8,12 +9,18 @@ public class Player extends GameObject{
     Random random = new Random();
     Handler handler;
 
+    private BufferedImage player_image;
 
 
     public Player(int x, int y, ID id,Handler handler)
     {
         super(x,y,id);
         this.handler = handler;
+
+        SpriteSheet ss = new SpriteSheet(Game.sprite_sheet);
+
+        player_image = ss.grabImage(1,1,32,32);
+
 
 
     }
@@ -59,9 +66,11 @@ public class Player extends GameObject{
 
     public void render(Graphics g) {
         if(id == ID.Player)g.setColor(Color.WHITE);
-        else if(id == ID.Player2)g.setColor(Color.RED);
+       // else if(id == ID.Player2)g.setColor(Color.RED);
 
         g.fillRect((int)x,(int)y,32,32);
 
+
+       // g.drawImage(player_image,(int)x,(int)y,null);
     }
 }

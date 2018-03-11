@@ -2,6 +2,7 @@ package com.Survive.main;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
 import java.util.Random;
 
 public class Game extends Canvas implements Runnable {
@@ -22,6 +23,9 @@ public class Game extends Canvas implements Runnable {
     private HUD hud;
     private EnemySpawner spawner;
     private Menu menu;
+    private Shop shop;
+
+    public static BufferedImage sprite_sheet;
 
     public static int getWIDTH() {
         return WIDTH;
@@ -37,6 +41,7 @@ public class Game extends Canvas implements Runnable {
       Help,
         End,
         Select,
+        Shop,
     };
 
     public static STATE GameState = STATE.Menu;
@@ -66,15 +71,21 @@ public class Game extends Canvas implements Runnable {
 
     public Game()
     {
+        BufferedImageLoader loader = new BufferedImageLoader();
+
+        sprite_sheet = loader.loadImage("sprite_sheet.png");
 
         handler = new Handler();
         hud = new HUD();
+        shop = new Shop(handler,hud);
         menu = new Menu(this,handler,hud);
         this.addKeyListener(new KeyInput(handler,this));
         this.addMouseListener(menu);
+        this.addMouseListener(shop);
 
 
         new Window(WIDTH,HEIGHT,"Survive",this); // this refers to the class Game that we are in
+
 
 
         spawner = new EnemySpawner(handler,hud,this);
@@ -180,7 +191,6 @@ public class Game extends Canvas implements Runnable {
         g.setColor(Color.BLACK);
         g.fillRect(0,0,WIDTH,HEIGHT);
 
-        handler.render(g);
 
         if(paused)
         {
@@ -191,8 +201,14 @@ public class Game extends Canvas implements Runnable {
         if(GameState == STATE.Play) {
 
             hud.render(g);
+            handler.render(g);
+        }else if(GameState == STATE.Shop)
+        {
+            shop.render(g);
         }else if(GameState == STATE.Menu || GameState == STATE.Help|| GameState == STATE.End||GameState == STATE.Select){
          menu.render(g);
+         handler.render(g);
+
         }
 
         g.dispose();

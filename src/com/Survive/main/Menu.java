@@ -108,7 +108,7 @@ public class Menu extends MouseAdapter{
             if(mouseOver(mx,my,Game.getWIDTH() / 2 - 240, 600, 500, 64))
             {
 
-                game.GameState = Game.STATE.Play;
+                game.GameState = Game.STATE.Menu;
                 hud.setLevel(1);
                 hud.setScore(0);
                 handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH - 50), r.nextInt(Game.HEIGHT - 50), ID.BasicEnemy, handler));
