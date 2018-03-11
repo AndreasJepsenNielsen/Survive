@@ -64,7 +64,7 @@ public class EnemySpawner {
                     handler.addObject(new FastEnemy(r.nextInt(Game.WIDTH - 50), r.nextInt(Game.HEIGHT - 50), ID.FastEnemy, handler));
                 } else if (hud.getLevel() == 12) {
                     handler.clearEnemies();
-                    handler.addObject(new Boss1(Game.WIDTH / 2 - 48, -120, ID.Boss1, handler));
+                    handler.addObject(new Boss1(Game.WIDTH / 2 - 48, -270, ID.Boss1, handler));
 
                 } else if (hud.getLevel() == 15) {
                     handler.addObject(new BasicEnemy(r.nextInt(Game.WIDTH - 50), r.nextInt(Game.HEIGHT - 50), ID.BasicEnemy, handler));
@@ -120,7 +120,7 @@ public class EnemySpawner {
                     handler.addObject(new FastEnemy(r.nextInt(Game.WIDTH - 50), r.nextInt(Game.HEIGHT - 50), ID.FastEnemy, handler));
                 } else if (hud.getLevel() == 12) {
                     handler.clearEnemies();
-                    handler.addObject(new Boss1(Game.WIDTH / 2 - 48, -120, ID.Boss1, handler));
+                    handler.addObject(new Boss1(Game.WIDTH / 2 - 48, -270, ID.Boss1, handler));
 
                 } else if (hud.getLevel() == 15) {
                     handler.addObject(new HardEnemy(r.nextInt(Game.WIDTH - 50), r.nextInt(Game.HEIGHT - 50), ID.BasicEnemy, handler));

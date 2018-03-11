@@ -43,7 +43,7 @@ public class Player extends GameObject{
 
             if(tempObject.getId() == ID.BasicEnemy||
                     tempObject.getId() == ID.FastEnemy ||
-                    tempObject.getId() == ID.SmartEnemy) // if the id is a ENemy
+                    tempObject.getId() == ID.SmartEnemy||tempObject.getId() == ID.Boss1)
             {
                 if(getBounds().intersects(tempObject.getBounds())) // if the basic enemy intersects with the player
                 {
