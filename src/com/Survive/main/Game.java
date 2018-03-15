@@ -160,6 +160,10 @@ public class Game extends Canvas implements Runnable {
             if(HUD.HEALTH <= 0) {
                 HUD.HEALTH = 100;
 
+                shop.setB1(1000);
+                shop.setB2(1000);
+                shop.setB3(1000);
+
                 GameState = STATE.End;
                 handler.clearEnemies();
                 for (int i = 0; i < 15; i++) {
@@ -172,6 +176,7 @@ public class Game extends Canvas implements Runnable {
         }else if(GameState == STATE.Menu|| GameState == STATE.End||GameState == STATE.Select ||GameState == STATE.Help){
             menu.tick();
             handler.tick();
+
         }
 
     }

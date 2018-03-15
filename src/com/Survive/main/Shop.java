@@ -8,7 +8,7 @@ public class Shop extends MouseAdapter{
 
     Handler handler;
     private int B1 = 1000;
-    private int B2 = 2000;
+    private int B2 = 1000;
     private int B3 = 1000;
 
     HUD hud;
@@ -45,6 +45,7 @@ public class Shop extends MouseAdapter{
 
     public void render(Graphics g)
     {
+
         //Box 1
         g.setColor(Color.WHITE);
         g.setFont(new Font("arial",0,48));
@@ -74,6 +75,8 @@ public class Shop extends MouseAdapter{
     public void mousePressed(MouseEvent e) {
         int mx = e.getX();
         int my = e.getY();
+
+
 
         //box1
         if (Game.GameState == Game.STATE.Shop) {
